@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import WorkExperience from "./WorkExperience";
 import Skills from "./Skills";
@@ -12,7 +14,8 @@ import {
   } from "@/components/ui/card"
 import { Video } from "@/components/ui/video";
 import { Badge } from "../ui/badge";
-  
+import { Skeleton } from "../ui/skeleton";
+import { useState, useEffect } from "react";
 
 // Create a dictionary of work experiences
 const workExperiences = [
@@ -56,7 +59,7 @@ const projectsData = [
   {
     title: "Yekolo Temari Community",
     description: "A web application to help users upskill their knowledge about web security by designing different web-based challenges.",
-    videoSrc: "/videos/yekolotemari-demo.mov",
+    videoSrc: "/videos/yekolotemari-demo.mp4",
     technologies: ["Wordpress", "PHP", "Web Security"],
     link: "https://yekolotemari.org"
   },
@@ -70,13 +73,24 @@ const projectsData = [
   {
     title: "Ethiopian Tailored CTF platform",
     description: "A web application to help users upskill their knowledge about web security by designing different web-based challenges.",
-    videoSrc: "/videos/yekolotemari-ctf-demo-vid.mov",
+    videoSrc: "/videos/yekolotemari-ctf-demo-vid.mp4",
     technologies: ["Laravel", "PHP", "Web Security"],
     link: "#"
   },
 ];
 
 export default function MainSection() {
+    const [isLoading, setIsLoading] = useState(true);
+    
+    useEffect(() => {
+        // Simulate loading time for skeleton
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
+        
+        return () => clearTimeout(timer);
+    }, []);
+    
     return (
         <div className="flex flex-col items-center justify-center gap-8 py-8">
             <div className="w-full max-w-3xl flex flex-col border rounded-lg shadow-md p-6">
@@ -110,53 +124,77 @@ export default function MainSection() {
                 <Skills />
             </div>
             
-            
-            
             <div className="w-full max-w-3xl border rounded-lg shadow-md p-6">
                 <h2 className="text-2xl font-bold mb-6">Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-                    {projectsData.map((project, index) => (
-                        <Card key={index} className="overflow-hidden ">
-                            <CardHeader className="p-0">
-                                <div className="relative aspect-video">
-                                    <Video 
-                                        src={project.videoSrc} 
-                                        alt={project.title}
-                                        className="w-full h-full object-contain"
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        loading="lazy"
-                                    />
-                                </div>
-                            </CardHeader>
-                            <CardContent className="p-4">
-                                <CardTitle className="text-lg">{project.title}</CardTitle>
-                                <CardDescription className="mt-2">{project.description}</CardDescription>
-                                <div className="mt-3 flex flex-wrap gap-2">
-                                    {project.technologies.map((tech, techIndex) => (
-                                        <Badge 
-                                            key={techIndex}
-                                        >
-                                            <span>{tech}</span>
-                                        </Badge>
-                                    ))}
-                                </div>
-                                {/* <a 
-                                    href={project.link} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="mt-4 inline-block text-sm text-blue-600 hover:underline"
-                                >
-                                    View Project →
-                                </a> */}
-                            </CardContent>
-                        </Card>
-                    ))}
+                <div className="flex flex-col md:flex-row flex-wrap gap-8">
+                    {isLoading ? (
+                        // Skeleton loaders for projects
+                        Array(4).fill(0).map((_, index) => (
+                            <Card key={`skeleton-${index}`} className="overflow-hidden">
+                                <CardHeader className="p-0">
+                                    <Skeleton className="w-full aspect-video" />
+                                </CardHeader>
+                                <CardContent className="p-4">
+                                    <Skeleton className="h-6 w-3/4 mb-2" />
+                                    <Skeleton className="h-4 w-full mb-2" />
+                                    <Skeleton className="h-4 w-5/6 mb-4" />
+                                    <div className="flex flex-wrap gap-2">
+                                        <Skeleton className="h-5 w-16" />
+                                        <Skeleton className="h-5 w-20" />
+                                        <Skeleton className="h-5 w-14" />
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))
+                    ) : (
+                        // Actual project cards
+                        projectsData.map((project, index) => (
+                            <Card key={index} className="overflow-hidden basis-1/3 h-1/2 flex flex-col flex-grow">
+                                <CardHeader className="p-0">
+                                    <div className="relative aspect-video">
+                                        {project.videoSrc.endsWith('.gif') ? (
+                                            <Image
+                                                src={project.videoSrc}
+                                                alt={project.title}
+                                                className="w-full h-full object-contain"
+                                                width={600}
+                                                height={400}
+                                                priority
+                                            />
+                                        ) : (
+                                            <Video 
+                                                src={project.videoSrc} 
+                                                alt={project.title}
+                                                className="w-full h-full object-contain"
+                                                width={600}
+                                                height={400}
+                                                autoPlay
+                                                muted
+                                                loop
+                                                playsInline
+                                                loading="lazy"
+                                            />
+                                        )}
+                                    </div>
+                                </CardHeader>
+                                <CardContent className="p-4 flex-grow">
+                                    <CardTitle className="text-lg">{project.title}</CardTitle>
+                                    <CardDescription className="mt-2">{project.description}</CardDescription>
+                                    <div className="mt-3 flex flex-wrap gap-2">
+                                        {project.technologies.map((tech, techIndex) => (
+                                            <Badge 
+                                                key={techIndex}
+                                            >
+                                                <span>{tech}</span>
+                                            </Badge>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))
+                    )}
                 </div>
             </div>
-
 
             <div className="w-full max-w-3xl border rounded-lg shadow-md p-6">
                 <Achievements />

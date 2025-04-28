@@ -27,7 +27,7 @@ export default function WorkExperience({ experiences }) {
                   <div className="mt-2 flex flex-wrap gap-1">
                     {experience.skills.map((skill, skillIndex) => (
                       <Badge 
-                      key={index} 
+                      key={skillIndex} 
                       // variant={skill.category}
                     >
                       <span>{skill}</span>

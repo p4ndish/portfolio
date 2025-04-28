@@ -5,11 +5,11 @@ import Link from "next/link"
 export default function HeroSection() {
     return (
         <div className="flex flex-col items-center justify-center border-2  py-14 ">
-            <div className="flex flex-col items-start p-4" > 
+            <div className="flex flex-col justify-center items-center md:items-start p-4" > 
         
                 <h1 className="text-4xl  font-bold text-center mb-1" > Hi, i am Dagim 👋</h1>
                 <h2 className="text-md font-semibold text-center " >A Software Engineer and Security Engineer</h2>
-                <div className="mt-4 flex gap-3">
+                <div className="mt-4 flex flex-row justify-center md:justify-start gap-3">
                     <Button asChild size="sm" variant="outline">
                         <Link href="/resume" className="flex items-center gap-2">
                             <FileText className="w-4 h-4" />
@@ -19,7 +19,7 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            <div className="w-1/2 flex flex-col   p-4" > 
+            <div className="w-full md:w-1/2 flex flex-col   p-4" > 
                 <h1 className="text-xl font-bold underline mb-4">
                     About Me
                 </h1>
