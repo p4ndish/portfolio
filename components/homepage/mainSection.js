@@ -22,7 +22,7 @@ const workExperiences = [
     {
         company: "A2SV (Africa to Silicon Valley)",
         role: "Flutter Developer",
-        period: "2022 - Present",
+        period: "2022 - 04/2025",
         description: "Working as part-time remote Flutter mobile app development.",
         logo: "https://a2sv.org/logos/logo-blue.svg",
         skills: ["Flutter", "Dart", "Mobile Development", "Remote Work"]
@@ -32,8 +32,8 @@ const workExperiences = [
         role: "Backend Developer",
         period: "2025/02 - Present",
         description: "Working as part-time remote Flutter mobile app development.",
-        logo: "/images/yekolotemari-logo.png",
-        skills: ["Laravel", "PHP", "Swagger"]
+        logo: "/images/tibeb-logo.png",
+        skills: ["Laravel", "PHP", "Swagger", "API"]
     },
     {
         company: "Yekolo Temari Community",
@@ -46,11 +46,20 @@ const workExperiences = [
     {
         company: "Melmet Trading",
         role: "Odoo Developer",
-        period: "2024/07 - Present",
+        period: "2024/07 - 05/2025",
         description: "Working as Odoo ERP developer for different companies.",
         logo: "/images/melmet-icon-1.png", 
         skills: ["Odoo", "ERP", "Python", "JavaScript"]
+    },
+    {
+        company: "Upwork Freelancing",
+        role: "",
+        period: "2024/02 - Present",
+        description: "Working on different projects related to python, telegram bot, Flutter.",
+        logo: "/images/upwork-logo.png", 
+        skills: ["Python", "Telegram Bot", "Flutter", "Automation"]
     }
+
     // Add more experiences as needed
 ];
 
