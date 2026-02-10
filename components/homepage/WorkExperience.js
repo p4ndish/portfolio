@@ -2,14 +2,14 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 export default function WorkExperience({ experiences }) {
   return (
-    <div className="py-6">
+    <div className="py-6 ">
       <h2 className="text-2xl font-bold mb-6 ">Work Experience</h2>
       
       <div className="flex flex-col justify-between">
         {experiences.map((experience, index) => (
-          <div key={index} className="flex flex-row justify-between items-center gap-4 mb-6">
+          <div key={index} className="bg-gray-700/50 rounded-md p-4 flex flex-row justify-between items-center gap-4 mb-6">
             <Image
-              className="w-18 h-18 rounded-full border  border-indigo-300 object-contain"
+              className="w-18 h-18 rounded-full border bg-white p-2  border-indigo-300 object-contain"
               src={experience.logo}
               alt={`${experience.company} logo`}
               width={300}

@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { GithubIcon, Linkedin, Mail, Sun, Moon, FileText } from "lucide-react"
+import { Mail, Sun, Moon, FileText } from "lucide-react"
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa"
+import { SiUpwork, SiHackerone } from "react-icons/si"
 import { useTheme } from "next-themes"
 
 export default function SocialLinksBar() {
@@ -29,9 +31,20 @@ export default function SocialLinksBar() {
             aria-label="GitHub"
             className="transition-transform duration-200 hover:scale-110"
           >
-            <GithubIcon className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
+            <FaGithub className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
           </Link>
 
+
+
+          <Link
+            href="https://www.upwork.com/freelancers/~01926fda7bddb21983"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Upwork"
+            className="transition-transform duration-200 hover:scale-110"
+          >
+            <SiUpwork className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
+          </Link>
           <Link
             href="https://linkedin.com/in/dagim-tesfaye"
             target="_blank"
@@ -39,7 +52,7 @@ export default function SocialLinksBar() {
             aria-label="LinkedIn"
             className="transition-transform duration-200 hover:scale-110"
           >
-            <Linkedin className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
+            <FaLinkedin className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
           </Link>
 
           <Link
@@ -60,16 +73,24 @@ export default function SocialLinksBar() {
           </Link>
 
           <Link
+            href="https://hackerone.com/p4ndish?type=user"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hackerone"
+            className="transition-transform duration-200 hover:scale-110"
+          >
+            <SiHackerone className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
+          </Link>
+
+          {/* <Link
             href="https://medium.com/@etpandish"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Medium"
             className="transition-transform duration-200 hover:scale-110"
           >
-            <div className="bg-black text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-gray-800 transition-colors">
-              Medium
-            </div>
-          </Link>
+            <FaMedium className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
+          </Link> */}
 
           <Link
             href="mailto:tesfayedagim5@gmail.com"
