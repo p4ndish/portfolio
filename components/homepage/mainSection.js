@@ -149,7 +149,8 @@ export default function MainSection() {
     
     return (
         <div className="flex flex-col items-center justify-center gap-8 py-8">
-            <div className="w-full max-w-3xl bg-gray-800/70 flex flex-col border rounded-lg shadow-md p-6">
+            {/* Education */}
+            <div id="education" className="w-full max-w-5xl bg-gray-800/70 flex flex-col border rounded-lg shadow-md p-6">
                 <h1 className="text-xl font-bold underline mb-5">
                     Educational Background
                 </h1>
@@ -172,15 +173,70 @@ export default function MainSection() {
                 </div>
             </div>
 
-            <div className="w-full max-w-3xl bg-gray-800/60 border rounded-lg shadow-md p-6">
+            {/* Work Experience */}
+            <div id="work-experience" className="w-full max-w-5xl bg-gray-800/60 border rounded-lg shadow-md p-6">
                 <WorkExperience experiences={workExperiences} />
             </div>
             
-            <div className="w-full max-w-3xl bg-gray-800/70 border rounded-lg shadow-md p-6">
+            {/* Skills */}
+            <div id="skills" className="w-full max-w-5xl bg-gray-800/70 border rounded-lg shadow-md p-6">
                 <Skills />
             </div>
             
-            <div className="w-full max-w-5xl bg-gray-800/70 border rounded-lg shadow-md p-6">
+            {/* Open Source Projects */}
+            <div id="open-source" className="w-full max-w-5xl bg-gray-800/70 border rounded-lg shadow-md p-6">
+                <h2 className="text-2xl text-center font-bold mb-6">Open Source Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {openSourceProjects.map((project, index) => (
+                        <Card
+                            key={index}
+                            className="overflow-hidden flex flex-col cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+                        >
+                            <CardHeader className="p-4 pb-2">
+                                <div className="flex items-start justify-between">
+                                    <div>
+                                        <CardTitle className="text-lg">{project.title}</CardTitle>
+                                        <CardDescription className="text-sm mt-1">{project.subtitle}</CardDescription>
+                                    </div>
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 rounded-md hover:bg-muted transition-colors"
+                                        aria-label="View on GitHub"
+                                    >
+                                        <Github className="w-5 h-5" />
+                                    </a>
+                                </div>
+                            </CardHeader>
+                            <CardContent className="p-4 pt-0 flex-grow">
+                                <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.technologies.map((tech, techIndex) => (
+                                        <Badge key={techIndex} variant="secondary" className="text-xs">
+                                            {tech}
+                                        </Badge>
+                                    ))}
+                                </div>
+                            </CardContent>
+                            <CardFooter className="p-4 pt-0">
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+                                >
+                                    <ExternalLink className="w-4 h-4" />
+                                    View on GitHub
+                                </a>
+                            </CardFooter>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+            
+            {/* Projects */}
+            <div id="projects" className="w-full max-w-5xl bg-gray-800/70 border rounded-lg shadow-md p-6">
                 <h2 className="text-2xl text-center font-bold mb-6">Projects</h2>
                 <div className="flex flex-col max-w-5xl md:flex-row flex-wrap gap-18">
                     {isLoading ? (
@@ -237,58 +293,7 @@ export default function MainSection() {
                 </div>
             </div>
 
-            {/* Open Source Projects Section */}
-            <div className="w-full max-w-5xl bg-gray-800/70 border rounded-lg shadow-md p-6">
-                <h2 className="text-2xl text-center font-bold mb-6">Open Source Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {openSourceProjects.map((project, index) => (
-                        <Card
-                            key={index}
-                            className="overflow-hidden flex flex-col cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
-                        >
-                            <CardHeader className="p-4 pb-2">
-                                <div className="flex items-start justify-between">
-                                    <div>
-                                        <CardTitle className="text-lg">{project.title}</CardTitle>
-                                        <CardDescription className="text-sm mt-1">{project.subtitle}</CardDescription>
-                                    </div>
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2 rounded-md hover:bg-muted transition-colors"
-                                        aria-label="View on GitHub"
-                                    >
-                                        <Github className="w-5 h-5" />
-                                    </a>
-                                </div>
-                            </CardHeader>
-                            <CardContent className="p-4 pt-0 flex-grow">
-                                <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.technologies.map((tech, techIndex) => (
-                                        <Badge key={techIndex} variant="secondary" className="text-xs">
-                                            {tech}
-                                        </Badge>
-                                    ))}
-                                </div>
-                            </CardContent>
-                            <CardFooter className="p-4 pt-0">
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
-                                >
-                                    <ExternalLink className="w-4 h-4" />
-                                    View on GitHub
-                                </a>
-                            </CardFooter>
-                        </Card>
-                    ))}
-                </div>
-            </div>
-
+            {/* Project Modal */}
             {selectedProject ? (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
@@ -353,7 +358,8 @@ export default function MainSection() {
                 </div>
             ) : null}
 
-            <div className="w-full bg-gray-800/40  max-w-none border rounded-lg shadow-md p-6">
+            {/* Achievements */}
+            <div id="achievements" className="w-full bg-gray-800/40 max-w-5xl border rounded-lg shadow-md p-6">
                 <Achievements />
             </div>
         </div>
