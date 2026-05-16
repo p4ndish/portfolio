@@ -4,55 +4,85 @@ import { Badge } from "@/components/ui/badge"
 
 // Create a dictionary of skills with their categories
 const skillsData = [
+  // Backend
   {
-    name: "JavaScript",
-    category: "frontend",
-    // level: "Advanced"
-  },
-  {
-    name: "React",
-    category: "frontend",
-    // level: "Advanced"
-  },
-  {
-    name: "Flutter",
-    category: "mobile",
-    // level: "Advanced"
-  },
-  {
-    name: "Dart",
-    category: "mobile",
-    // level: "Advanced"
-  },
-  {
-    name: "Python",
-    category: "backend", 
-    // level: "Intermediate"
+    name: "Laravel",
+    category: "backend",
   },
   {
     name: "PHP",
     category: "backend",
-    // level: "Intermediate"
   },
   {
-    name: "Laravel",
+    name: "MySQL",
     category: "backend",
-    // level: "Intermediate"
+  },
+  {
+    name: "PostgreSQL",
+    category: "backend",
+  },
+  {
+    name: "Supabase",
+    category: "backend",
   },
   {
     name: "Node.js",
     category: "backend",
-    // level: "Intermediate"
+  },
+  {
+    name: "Python",
+    category: "backend",
+  },
+  {
+    name: "RESTful APIs",
+    category: "backend",
+  },
+  // Frontend
+  {
+    name: "JavaScript",
+    category: "frontend",
+  },
+  {
+    name: "React",
+    category: "frontend",
   },
   {
     name: "HTML/CSS",
     category: "frontend",
-    level: "Advanced"
   },
+  // Mobile
+  {
+    name: "Flutter",
+    category: "mobile",
+  },
+  {
+    name: "Dart",
+    category: "mobile",
+  },
+  // Tools & Others
   {
     name: "Git",
     category: "tools",
-    // level: "Intermediate"
+  },
+  {
+    name: "Docker",
+    category: "tools",
+  },
+  {
+    name: "Linux",
+    category: "tools",
+  },
+  {
+    name: "Odoo",
+    category: "tools",
+  },
+  {
+    name: "Web Security",
+    category: "tools",
+  },
+  {
+    name: "Cloud Setup",
+    category: "tools",
   }
 ];
 
@@ -76,10 +106,10 @@ export default function Skills() {
       <div className="mt-8">
         <h3 className="text-lg font-medium mb-3">Categories</h3>
         <div className="flex flex-wrap gap-2">
-          <Badge variant="frontend" className="px-3 py-1">Frontend</Badge>
           <Badge variant="backend" className="px-3 py-1">Backend</Badge>
+          <Badge variant="frontend" className="px-3 py-1">Frontend</Badge>
           <Badge variant="mobile" className="px-3 py-1">Mobile</Badge>
-          <Badge variant="tools" className="px-3 py-1">Tools</Badge>
+          <Badge variant="tools" className="px-3 py-1">Tools & Others</Badge>
         </div>
       </div>
     </div>

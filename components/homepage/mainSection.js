@@ -16,59 +16,58 @@ import { Video } from "@/components/ui/video";
 import { Badge } from "../ui/badge";
 import { Skeleton } from "../ui/skeleton";
 import { useState, useEffect } from "react";
+import { Github, ExternalLink } from "lucide-react";
 
 // Create a dictionary of work experiences
 const workExperiences = [
     {
-        company: "A2SV (Africa to Silicon Valley)",
-        role: "Flutter Developer",
-        period: "2022 - 04/2025",
-        description: "Working as part-time remote Flutter mobile app development.",
-        logo: "https://a2sv.org/logos/logo-blue.svg",
-        skills: ["Flutter", "Dart", "Mobile Development", "Remote Work"]
-    },
-    {
         company: "Tibeb Tutorials",
         role: "Backend Developer",
-        period: "2025/02 - Present",
-        description: "Working as part-time remote Flutter mobile app development.",
+        period: "02/2025 - Present",
+        description: "Designed and maintained production RESTful APIs using Laravel and MySQL for a tutoring platform with multiple user roles and content delivery workflows. Structured backend using service layer architecture, optimized database queries and Eloquent relationships, and coordinated API design with frontend developers.",
         logo: "/images/tibeb-logo.png",
-        skills: ["Laravel", "PHP", "Swagger", "API"]
-    },
-    {
-        company: "Yekolo Temari Community",
-        role: "Web Security Educator / Developer",
-        period: "2021 - Present ( Freelance ) ",
-        description: "Developed a web application to help users upskill their knowledge about web security by designing different web-based challenges.",
-        logo: "/images/yekolotemari-logo.png", 
-        skills: ["Web Security", "Education", "Web Development"]
+        skills: ["Laravel", "PHP", "MySQL", "RESTful API", "Swagger"]
     },
     {
         company: "Melmet Trading",
-        role: "Odoo Developer",
-        period: "2024/07 - 05/2025",
-        description: "Working as Odoo ERP developer for different companies.",
+        role: "Odoo Developer | Part-Time",
+        period: "07/2024 - 05/2025",
+        description: "Customized and deployed Odoo ERP modules for multiple enterprise clients covering procurement, inventory, and accounting workflows.",
         logo: "/images/melmet-icon-1.png", 
         skills: ["Odoo", "ERP", "Python", "JavaScript"]
     },
     {
+        company: "Yekolo Temari Community",
+        role: "Web Security Educator / Developer",
+        period: "2021 - Present (Freelance)",
+        description: "Built a web platform hosting interactive CTF-style security challenges to teach hands-on web security to university students. Designed challenges covering XSS, SQL injection, CSRF, authentication bypass, and session management vulnerabilities. Delivered educational sessions on secure web development practices.",
+        logo: "/images/yekolotemari-logo.png", 
+        skills: ["Web Security", "CTF", "Education", "PHP", "Laravel"]
+    },
+    {
         company: "Upwork Freelancing",
-        role: "",
-        period: "2024/02 - Present ( Freelance ) ",
-        description: "Working on different projects related to python, telegram bot, Flutter.",
+        role: "Freelance Developer",
+        period: "2024/02 - Present (Freelance)",
+        description: "Delivered web/backend development, Telegram bot development, and automation projects for clients as an independent contractor. Managed full project lifecycle from requirement gathering through delivery working directly with clients.",
         logo: "/images/upwork-logo.png", 
-        skills: ["Python", "Telegram Bot", "Flutter", "Automation"]
+        skills: ["Python", "Telegram Bot", "Flutter", "Automation", "Web Development"]
+    },
+    {
+        company: "A2SV (Africa to Silicon Valley)",
+        role: "Flutter Developer | Apprenticeship",
+        period: "2022 - 04/2025",
+        description: "Learned about data structures and algorithms through year-long intensive training and built different problem-solving projects. Worked on mobile app development projects using Flutter.",
+        logo: "https://a2sv.org/logos/logo-blue.svg",
+        skills: ["Flutter", "Dart", "Mobile Development", "Data Structures", "Algorithms"]
     },
     {
         company: "Bug Bounty Hunter (HackerOne Platform)",
-        role: "",
-        period: "2022 - Present ( Freelance )",
+        role: "Security Researcher",
+        period: "2022 - Present (Freelance)",
         description: "Performed ethical hacking and vulnerability research on real-world applications.",
         logo: "/images/h1_mark_black.png", 
-        skills: ["cybersecurity", "bug bounty", "hacking", "vulnerability research"]
+        skills: ["Cybersecurity", "Bug Bounty", "Penetration Testing", "Vulnerability Research"]
     }
-
-    // Add more experiences as needed
 ];
 
 // Create a dictionary of projects
@@ -99,6 +98,28 @@ const projectsData = [
     videoSrc: "/videos/yekolotemari-ctf-demo-vid.mp4",
     technologies: ["Laravel", "PHP", "Web Security"],
     link: "#"
+  },
+];
+
+// Open Source Projects
+const openSourceProjects = [
+  {
+    title: "Afromessage Python SDK",
+    subtitle: "Python SDK for AfroMessage SMS API",
+    description: "Built and published a Python SDK wrapping the AfroMessage SMS API covering single SMS, bulk SMS, OTP generation, and code verification. Available on PyPI for easy integration.",
+    thumbnailSrc: "/images/projects/afromessage-sdk.png",
+    technologies: ["Python", "API Wrapper", "SMS Integration", "PyPI"],
+    link: "https://github.com/p4ndish/afromessage",
+    github: "https://github.com/p4ndish/afromessage"
+  },
+  {
+    title: "SantimPay Laravel SDK",
+    subtitle: "Laravel SDK for SantimPay Payment Gateway",
+    description: "Built a Laravel SDK wrapping the SantimPay payment gateway API. Provides easy integration for Ethiopian payment processing in Laravel applications.",
+    thumbnailSrc: "/images/projects/santimpay-sdk.png",
+    technologies: ["Laravel", "PHP", "Payment Gateway", "Composer"],
+    link: "https://github.com/p4ndish/santimpay-sdk",
+    github: "https://github.com/p4ndish/santimpay-sdk"
   },
 ];
 
@@ -135,11 +156,11 @@ export default function MainSection() {
 
                 <div className="flex flex-row justify-between gap-8 ">
                     <div className="flex flex-col ">
-                        <span className="font-semibold tracking-tight">St. Mary University of Ethiopia</span>
+                        <span className="font-semibold tracking-tight">Saint Mary University of Ethiopia</span>
                         <span className="leading-none text-sm text-muted-foreground">
                             Bachelor of Science in Computer Science
                         </span>
-                        <span className="leading-none text-sm text-muted-foreground">2021 - 2026</span>
+                        <span className="leading-none text-sm text-muted-foreground">05/2021 - 02/2026 · Graduated 2026</span>
                     </div>
                     <Image
                         className="w-26 h-26 object-contain"
@@ -161,7 +182,7 @@ export default function MainSection() {
             
             <div className="w-full max-w-5xl bg-gray-800/70 border rounded-lg shadow-md p-6">
                 <h2 className="text-2xl text-center font-bold mb-6">Projects</h2>
-                <div className="flex flex-col max-w-5xl  md:flex-row flex-wrap gap-18">
+                <div className="flex flex-col max-w-5xl md:flex-row flex-wrap gap-18">
                     {isLoading ? (
                         // Skeleton loaders for projects
                         Array(4).fill(0).map((_, index) => (
@@ -213,6 +234,58 @@ export default function MainSection() {
                             </Card>
                         ))
                     )}
+                </div>
+            </div>
+
+            {/* Open Source Projects Section */}
+            <div className="w-full max-w-5xl bg-gray-800/70 border rounded-lg shadow-md p-6">
+                <h2 className="text-2xl text-center font-bold mb-6">Open Source Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {openSourceProjects.map((project, index) => (
+                        <Card
+                            key={index}
+                            className="overflow-hidden flex flex-col cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+                        >
+                            <CardHeader className="p-4 pb-2">
+                                <div className="flex items-start justify-between">
+                                    <div>
+                                        <CardTitle className="text-lg">{project.title}</CardTitle>
+                                        <CardDescription className="text-sm mt-1">{project.subtitle}</CardDescription>
+                                    </div>
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 rounded-md hover:bg-muted transition-colors"
+                                        aria-label="View on GitHub"
+                                    >
+                                        <Github className="w-5 h-5" />
+                                    </a>
+                                </div>
+                            </CardHeader>
+                            <CardContent className="p-4 pt-0 flex-grow">
+                                <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.technologies.map((tech, techIndex) => (
+                                        <Badge key={techIndex} variant="secondary" className="text-xs">
+                                            {tech}
+                                        </Badge>
+                                    ))}
+                                </div>
+                            </CardContent>
+                            <CardFooter className="p-4 pt-0">
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+                                >
+                                    <ExternalLink className="w-4 h-4" />
+                                    View on GitHub
+                                </a>
+                            </CardFooter>
+                        </Card>
+                    ))}
                 </div>
             </div>
 

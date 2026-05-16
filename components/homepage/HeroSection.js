@@ -24,11 +24,14 @@ export default function HeroSection() {
                     About Me
                 </h1>
                 <div className="text-sm dark:text-white text-gray-700  ">
-                    I am a Software Engineer and Security Engineer. 
-                    <b className="text-black dark:text-yellow-500"> I am candidate graduate computer science student, </b>
-                    deeply interested in cybersecurity, data structures, algorithms, and programming. 
-                    From childhood to now I have been learning transforming obstacles into stepping stones. 
-                    <p className=" text-black dark:text-yellow-500">I have gained alot of experience in working with different <u><a href="https://www.upwork.com/freelancers/~01926fda7bddb21983">clients</a></u> , <u><a href="https://a2sv.com">A2SV(African to Silicon Valley)</a></u>, <u> <a href="https://melmettrading.com">Melmet Trading PLC</a></u>, <u><a href="https://hackerone.com/p4ndish">Hackerone</a></u>... etc. <br></br></p>
+                    Backend developer with solid production experience building Laravel systems served in real-world 
+                    environments including ERP deployments and RESTful API platforms. 
+                    <b className="text-black dark:text-yellow-500">Graduated with a BSc in Computer Science from Saint Mary University</b> and trained at A2SV in data structures and algorithms. 
+                    Comfortable working on complex systems involving multiple user roles, structured workflows, and layered business logic. 
+                    Strong foundation in database design with MySQL and PostgreSQL. National cybersecurity CTF champion with 
+                    a practical understanding of secure system design. Actively uses AI-assisted development tools in daily 
+                    workflow and adapts quickly to new codebases and architectural patterns.
+                    <p className=" text-black dark:text-yellow-500 mt-3">Experienced working with <u><a href="https://www.upwork.com/freelancers/~01926fda7bddb21983">Upwork clients</a></u>, <u><a href="https://a2sv.com">A2SV</a></u>, <u><a href="https://melmettrading.com">Melmet Trading</a></u>, and <u><a href="https://hackerone.com/p4ndish">HackerOne</a></u>.</p>
                     <br></br>
                     My ultimate aspiration is to be able to contribute to a larger cause, impacting the lives of millions.
                 </div>
