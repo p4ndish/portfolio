@@ -36,6 +36,17 @@ yarn-error.log*
 # vercel
 .vercel
 
+# AI coding tools
+.claude/
+.openclaude/
+.cursor/
+.copilot/
+.codeium/
+.aider*
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
