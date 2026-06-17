@@ -1,28 +1,23 @@
-"use client"
+"use client";
 
-import { ThemeProvider as NextThemesProvider } from "next-themes"
-import { useState, useEffect } from "react"
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { useState, useEffect } from "react";
 
 export function ThemeProvider({ children, ...props }) {
-  const [mounted, setMounted] = useState(false)
-  
+  const [mounted, setMounted] = useState(false);
+
   // Prevent hydration mismatch
   useEffect(() => {
-    setMounted(true)
-  }, [])
-  
+    setMounted(true);
+  }, []);
+
   if (!mounted) {
-    return null
+    return null;
   }
-  
+
   return (
-    <NextThemesProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem
-      {...props}
-    >
+    <NextThemesProvider attribute="class" defaultTheme="dark" {...props}>
       {children}
     </NextThemesProvider>
-  )
-} 
+  );
+}
