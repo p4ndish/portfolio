@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Mail, Sun, Moon, FileText } from "lucide-react"
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa"
-import { SiUpwork, SiHackerone } from "react-icons/si"
-import { useTheme } from "next-themes"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Mail, Sun, Moon, FileText } from "lucide-react";
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import { SiUpwork, SiHackerone } from "react-icons/si";
+import { useTheme } from "next-themes";
 
 export default function SocialLinksBar() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   // Prevent hydration mismatch
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <div className="fixed bottom-0 left-0 flex items-center justify-center w-full my-4 sm:my-6 md:my-8 px-2 sm:px-4">
-      <div className="dark:bg-gray-600 flex justify-center items-center bg-background rounded-full shadow-lg px-3 sm:px-4 md:px-6 py-2 sm:py-3 w-full max-w-xs sm:max-w-sm md:max-w-md transition-all duration-300 hover:scale-105 hover:shadow-xl">
+      <div className="dark:bg-gray-800/80 flex justify-center items-center bg-background rounded-full shadow-lg px-3 sm:px-4 md:px-6 py-2 sm:py-3 w-full max-w-xs sm:max-w-sm md:max-w-md transition-all duration-300 hover:scale-105 hover:shadow-xl">
         <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 md:gap-6">
           <Link
             href="https://github.com/p4ndish"
@@ -33,8 +33,6 @@ export default function SocialLinksBar() {
           >
             <FaGithub className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
           </Link>
-
-
 
           <Link
             href="https://www.upwork.com/freelancers/~01926fda7bddb21983"
@@ -99,7 +97,7 @@ export default function SocialLinksBar() {
           >
             <Mail className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground hover:text-primary transition-colors" />
           </Link>
-          
+
           <Link
             href="/resume"
             aria-label="Resume"
@@ -124,5 +122,5 @@ export default function SocialLinksBar() {
         </button>
       </div>
     </div>
-  )
+  );
 }

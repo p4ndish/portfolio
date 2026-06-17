@@ -10,10 +10,10 @@ export default function WorkExperience({ experiences }) {
         {experiences.map((experience, index) => (
           <div
             key={index}
-            className="bg-gray-700/50 rounded-md p-4 flex flex-row items-start gap-3"
+            className="bg-card dark:bg-gray-700/50 rounded-md p-4 flex flex-row items-start gap-3"
           >
             <Image
-              className="w-14 h-14 rounded-full border bg-white p-1.5 border-indigo-300 object-contain shrink-0"
+              className="w-14 h-14 rounded-full border bg-white dark:bg-gray-300 p-1.5 border-indigo-300 dark:border-indigo-500/30 object-contain shrink-0"
               src={experience.logo}
               alt={`${experience.company} logo`}
               width={300}
