@@ -24,7 +24,7 @@ export default function ResumePage() {
         <h1 className="text-3xl font-bold">My Resume</h1>
         <Button asChild>
           <a 
-            href="/Dagim-Tesfaye-Revised.pdf" 
+            href="/Dagim_Tesfaye_Resume_Revised.pdf" 
             download
             className="flex items-center gap-2"
           >
@@ -41,7 +41,7 @@ export default function ResumePage() {
           </div>
         )}
         <iframe 
-          src="/Dagim-Tesfaye-Revised.pdf" 
+          src="/Dagim_Tesfaye_Resume_Revised.pdf" 
           className="w-full h-full"
           title="Resume PDF"
           onLoad={() => setPdfLoaded(true)}

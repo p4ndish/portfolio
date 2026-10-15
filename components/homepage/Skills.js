@@ -22,6 +22,14 @@ const skillsData = [
     category: "backend",
   },
   {
+    name: "Flask",
+    category: "backend",
+  },
+  {
+    name: "FastAPI",
+    category: "backend",
+  },
+  {
     name: "Supabase",
     category: "backend",
   },
@@ -43,7 +51,15 @@ const skillsData = [
     category: "frontend",
   },
   {
+    name: "TypeScript",
+    category: "frontend",
+  },
+  {
     name: "React",
+    category: "frontend",
+  },
+  {
+    name: "Next.js",
     category: "frontend",
   },
   {
@@ -82,6 +98,22 @@ const skillsData = [
   },
   {
     name: "Cloud Setup",
+    category: "tools",
+  },
+  {
+    name: "Nginx",
+    category: "tools",
+  },
+  {
+    name: "Cloudflare",
+    category: "tools",
+  },
+  {
+    name: "GitHub Actions",
+    category: "tools",
+  },
+  {
+    name: "AI Agent Orchestration",
     category: "tools",
   },
 ];

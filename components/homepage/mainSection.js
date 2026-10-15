@@ -39,11 +39,28 @@ const workExperiences = [
     skills: ["Odoo", "ERP", "Python", "JavaScript"],
   },
   {
+    company: "YeneTTS",
+    role: "Founder & Full-Stack Engineer",
+    period: "07/2026 - Present",
+    description:
+      "Built and launched a live-stream donation platform for Ethiopian creators, serving 350+ content creators. Built with Next.js/TypeScript, Laravel and MySQL plus a Python text-to-speech service, with Telebirr and M-Pesa payments and blocked-word filtering. Runs on Docker, nginx and Cloudflare with separate dev, staging and production environments and CI/CD through GitHub Actions.",
+    logo: "/images/yenetts-logo.png",
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "Laravel",
+      "MySQL",
+      "Python",
+      "Docker",
+      "GitHub Actions",
+    ],
+  },
+  {
     company: "Yekolo Temari Community",
     role: "Web Security Educator / Developer",
     period: "2021 - Present (Freelance)",
     description:
-      "Built a web platform hosting interactive CTF-style security challenges to teach hands-on web security to university students. Designed challenges covering XSS, SQL injection, CSRF, authentication bypass, and session management vulnerabilities. Delivered educational sessions on secure web development practices.",
+      "Built an interactive platform where students practice finding and exploiting web vulnerabilities, used across 10+ community events. Designed challenges covering XSS, SQL injection, CSRF, authentication bypass, and session management flaws. Led secure web development workshops for university students and community members.",
     logo: "/images/yekolotemari-logo.png",
     skills: ["Web Security", "CTF", "Education", "PHP", "Laravel"],
   },
@@ -62,21 +79,7 @@ const workExperiences = [
       "Web Development",
     ],
   },
-  {
-    company: "A2SV (Africa to Silicon Valley)",
-    role: "Flutter Developer | Apprenticeship",
-    period: "2022 - 04/2025",
-    description:
-      "Learned about data structures and algorithms through year-long intensive training and built different problem-solving projects. Worked on mobile app development projects using Flutter.",
-    logo: "https://a2sv.org/logos/logo-blue.svg",
-    skills: [
-      "Flutter",
-      "Dart",
-      "Mobile Development",
-      "Data Structures",
-      "Algorithms",
-    ],
-  },
+
   {
     company: "Bug Bounty Hunter (HackerOne Platform)",
     role: "Security Researcher",
@@ -143,7 +146,7 @@ const openSourceProjects = [
     title: "SantimPay Laravel SDK",
     subtitle: "Laravel SDK for SantimPay Payment Gateway",
     description:
-      "Built a Laravel SDK wrapping the SantimPay payment gateway API. Provides easy integration for Ethiopian payment processing in Laravel applications.",
+      "Built a Laravel SDK wrapping the SantimPay payment gateway API, providing easy integration for Ethiopian payment processing in Laravel applications.",
     thumbnailSrc: "/images/projects/santimpay-sdk.png",
     technologies: ["Laravel", "PHP", "Payment Gateway", "Composer"],
     link: "https://github.com/p4ndish/santimpay-sdk",
@@ -202,6 +205,25 @@ export default function MainSection() {
             className="w-26 h-26 object-contain"
             src="/images/stmarylogo.png"
             alt="@smuc"
+            width={300}
+            height={300}
+          />
+        </div>
+
+        <div className="flex flex-row justify-between items-center gap-8 mt-6 pt-6 border-t">
+          <div className="flex flex-col gap-1">
+            <span className="font-semibold tracking-tight">
+              A2SV (Africa to Silicon Valley)
+            </span>
+            <span className="text-sm text-muted-foreground">
+              Year-long intensive training in data structures and algorithms,
+              building different problem-solving projects.
+            </span>
+          </div>
+          <Image
+            className="w-16 h-16 object-contain shrink-0"
+            src="https://a2sv.org/logos/logo-blue.svg"
+            alt="A2SV logo"
             width={300}
             height={300}
           />
